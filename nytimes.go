@@ -39,14 +39,17 @@ func display_dictionary(ip string){
         
         if t.HasChildren(tem,rune(ip[itr+1])){
             if _, ok := t.Find(tem);ok{
-            fmt.Println(tem)
+            //fmt.Println(tem)
             flg=itr
             }
         }else{
+            
             if _, ok := t.Find(tem);ok{
-                 fmt.Println(tem)
+                 //fmt.Println(tem)
             flg=itr
             }
+            tem=tem[0:(len(tem)-(itr-flg))]
+            fmt.Println(tem)
           tem=""
          itr = flg  
         }
